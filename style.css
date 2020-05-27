@@ -25,6 +25,10 @@ body {
 }
 
 header {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,12 +39,43 @@ header {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+header .play {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 300px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background: #f5f6f7;
+  -webkit-box-shadow: 15px 15px 25px #e6e7e8, -15px -15px 25px #ffffff;
+          box-shadow: 15px 15px 25px #e6e7e8, -15px -15px 25px #ffffff;
+  border: 0.004em solid rgba(255, 255, 255, 0.3);
+  color: #9baacf;
+  -webkit-transition: all 120ms ease-out 0s;
+  transition: all 120ms ease-out 0s;
+}
+
+header .play:hover {
+  color: #6d5dfc5d;
+}
+
+header .play:active {
+  color: #6d5dfc;
+  -webkit-box-shadow: inset 8px 8px 16px #ebeced, inset -8px -8px 16px #ffffff;
+          box-shadow: inset 8px 8px 16px #ebeced, inset -8px -8px 16px #ffffff;
 }
 
 header .core {
@@ -70,6 +105,10 @@ header .inner {
           perspective: 1000px;
   -webkit-animation: rotate 30s ease-in-out infinite both alternate, movement 30s ease-in-out infinite both;
           animation: rotate 30s ease-in-out infinite both alternate, movement 30s ease-in-out infinite both;
+}
+
+header .inner img {
+  width: 70px;
 }
 
 header .outer {
@@ -175,6 +214,18 @@ header .further-out {
   70% {
     -webkit-transform: translateY(-15%) translateX(15%) rotateY(30deg);
             transform: translateY(-15%) translateX(15%) rotateY(30deg);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header .play {
+    margin-right: 0px;
   }
 }
 
