@@ -13,14 +13,15 @@
 }
 
 body {
+  overflow: hidden;
   @include flex();
   flex-direction: column;
   background: rgb(255, 255, 255);
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 1) 3%,
-    rgba(223, 223, 223, 1) 100%
-  );
+  // background: radial-gradient(
+  //   circle,
+  //   rgba(255, 255, 255, 1) 3%,
+  //   rgba(223, 223, 223, 1) 100%
+  // );
 }
 svg {
   position: "absolute";
@@ -30,19 +31,33 @@ svg {
 header {
   user-select: none;
   @include flex();
+  flex-direction: column;
   height: 100vh;
-  justify-content: space-around;
+  h1 {
+    font-family: "Arial" !important;
+    margin-bottom: 60px;
+    letter-spacing: 50px;
+    font-size: 100px;
+    color: #ffffff;
+    transition: text-shadow 1.5s ease-in;
+    text-shadow: 0px 0px 2px #ffffff, 0px 0px 2px #ffffff;
+  }
+  .dope {
+    text-shadow: 5px 5px 10px #e6e7e8, -5px -5px 10px #ffffff;
+  }
   .core {
     @include flex();
     border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
   }
   .further-out {
+    // position: relative;
     width: 120px;
     height: 120px;
     // background-color: #eeeeee;
     box-shadow: inset -4px -4px 3px #cacaca, inset 4px 4px 1px #ffffff,
       15px 15px 25px #e6e7e8, -15px -15px 25px #ffffff;
   }
+
   .outer {
     box-shadow: -4px -4px 9px #cacaca, 4px 4px 20px #ffffff;
     width: 90%;
@@ -54,7 +69,7 @@ header {
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    background: #f5f6f7;
+    background: #ffffff;
     // box-shadow: 15px 15px 25px #e6e7e8, -15px -15px 25px #ffffff;
     border: 0.004em solid rgba(#fff, 0.3);
     color: #9baacf;
@@ -64,7 +79,7 @@ header {
     }
     &:active {
       color: #6d5dfc;
-      box-shadow: inset 8px 8px 16px #ebeced, inset -8px -8px 16px #ffffff;
+      box-shadow: inset 8px 8px 16px #f5f5f5, inset -8px -8px 16px #ffffff;
     }
   }
   .wave {
@@ -72,6 +87,14 @@ header {
     box-shadow: 15px 15px 25px #e6e7e8, -15px -15px 25px #ffffff;
     width: 100px;
     height: 100px;
+    z-index: -1;
+    opacity: 0;
+  }
+  .wave2 {
+    position: absolute;
+    box-shadow: 15px 15px 25px #e6e7e8, -15px -15px 25px #ffffff;
+    width: 150px;
+    height: 150px;
     z-index: -1;
     opacity: 0;
   }
@@ -120,6 +143,10 @@ header {
 }
 @media only screen and (max-width: 500px) {
   header {
+    h1 {
+      font-size: 55px;
+      letter-spacing: 25px;
+    }
     .further-out {
       width: 380px;
       height: 380px;

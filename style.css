@@ -8,6 +8,7 @@
 }
 
 body {
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,7 +23,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   background: white;
-  background: radial-gradient(circle, white 3%, #dfdfdf 100%);
 }
 
 svg {
@@ -45,9 +45,26 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100vh;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+}
+
+header h1 {
+  font-family: "Arial" !important;
+  margin-bottom: 60px;
+  letter-spacing: 50px;
+  font-size: 100px;
+  color: #ffffff;
+  -webkit-transition: text-shadow 1.5s ease-in;
+  transition: text-shadow 1.5s ease-in;
+  text-shadow: 0px 0px 2px #ffffff, 0px 0px 2px #ffffff;
+}
+
+header .dope {
+  text-shadow: 5px 5px 10px #e6e7e8, -5px -5px 10px #ffffff;
 }
 
 header .core {
@@ -83,7 +100,7 @@ header .play {
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  background: #f5f6f7;
+  background: #ffffff;
   border: 0.004em solid rgba(255, 255, 255, 0.3);
   color: #9baacf;
   -webkit-transition: all 120ms ease-out 0s;
@@ -96,8 +113,8 @@ header .play:hover {
 
 header .play:active {
   color: #6d5dfc;
-  -webkit-box-shadow: inset 8px 8px 16px #ebeced, inset -8px -8px 16px #ffffff;
-          box-shadow: inset 8px 8px 16px #ebeced, inset -8px -8px 16px #ffffff;
+  -webkit-box-shadow: inset 8px 8px 16px #f5f5f5, inset -8px -8px 16px #ffffff;
+          box-shadow: inset 8px 8px 16px #f5f5f5, inset -8px -8px 16px #ffffff;
 }
 
 header .wave {
@@ -106,6 +123,16 @@ header .wave {
           box-shadow: 15px 15px 25px #e6e7e8, -15px -15px 25px #ffffff;
   width: 100px;
   height: 100px;
+  z-index: -1;
+  opacity: 0;
+}
+
+header .wave2 {
+  position: absolute;
+  -webkit-box-shadow: 15px 15px 25px #e6e7e8, -15px -15px 25px #ffffff;
+          box-shadow: 15px 15px 25px #e6e7e8, -15px -15px 25px #ffffff;
+  width: 150px;
+  height: 150px;
   z-index: -1;
   opacity: 0;
 }
@@ -200,6 +227,10 @@ header .expand {
 }
 
 @media only screen and (max-width: 500px) {
+  header h1 {
+    font-size: 55px;
+    letter-spacing: 25px;
+  }
   header .further-out {
     width: 380px;
     height: 380px;
