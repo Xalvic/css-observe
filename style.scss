@@ -210,6 +210,20 @@ header {
   }
 }
 @media only screen and (max-width: 600px) {
+  video {
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1920px;
+    z-index: -1;
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+  }
   nav {
     display: none;
   }
@@ -218,14 +232,16 @@ header {
       width: 350px;
     }
     .Name-in {
-      transform: translateX(10%);
+      transform: translateX(-10%);
     }
-    h1 {
-      transform: translateX(10%);
+    .start {
+      transform: translateX(8%) translateY(-50%);
       font-size: 45px;
       letter-spacing: 25px;
+      margin-top: 0 !important;
     }
     .further-out {
+      background-color: #fff;
       width: 380px;
       height: 380px;
     }

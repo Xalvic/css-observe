@@ -336,6 +336,18 @@ header .expand {
 }
 
 @media only screen and (max-width: 600px) {
+  video {
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    max-width: 1920px;
+    z-index: -1;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
   nav {
     display: none;
   }
@@ -343,16 +355,18 @@ header .expand {
     width: 350px;
   }
   header .Name-in {
-    -webkit-transform: translateX(10%);
-            transform: translateX(10%);
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
   }
-  header h1 {
-    -webkit-transform: translateX(10%);
-            transform: translateX(10%);
+  header .start {
+    -webkit-transform: translateX(8%) translateY(-50%);
+            transform: translateX(8%) translateY(-50%);
     font-size: 45px;
     letter-spacing: 25px;
+    margin-top: 0 !important;
   }
   header .further-out {
+    background-color: #fff;
     width: 380px;
     height: 380px;
   }
