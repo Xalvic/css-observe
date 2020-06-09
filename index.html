@@ -10,14 +10,24 @@
     <link rel="stylesheet" href="style.css" />
     <title>Contain</title>
   </head>
+  <!-- <i class="fas fa-power-off"></i> -->
   <body>
     <header>
-      <div class="play"><i class="fas fa-power-off"></i></div>
+      <audio
+        class="audi"
+        data-key="32"
+        src="./eng-start.mp3"
+        autoplay="false"
+      ></audio>
       <div class="further-out core">
         <div class="outer core">
-          <div class="inner core"></div>
+          <div class="play core" onclick="start()" onmouseup="stop()">
+            START
+          </div>
         </div>
       </div>
+      <div class="wave core"></div>
     </header>
+    <script src="script.js"></script>
   </body>
 </html>
