@@ -31,7 +31,71 @@ svg {
   height: 0;
 }
 
+nav {
+  min-height: 10vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0px 100px;
+  opacity: 0;
+  -webkit-transform: translateY(-90%);
+          transform: translateY(-90%);
+  -webkit-transition: -webkit-transform 1s ease-out;
+  transition: -webkit-transform 1s ease-out;
+  transition: transform 1s ease-out;
+  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+}
+
+nav .Logo {
+  width: 90px;
+  margin-top: 10px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 0px 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+nav ul li a:hover {
+  color: rgba(82, 82, 82, 0.63);
+}
+
+.nav-in {
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+video {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 1920px;
+  z-index: -1;
+}
+
 header {
+  min-height: 90vh;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -45,6 +109,12 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -52,11 +122,35 @@ header {
   height: 100vh;
 }
 
-header h1 {
+header .Name {
+  margin-left: 50px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 350px;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  opacity: 0;
+  -webkit-transition: -webkit-transform 1s ease-out;
+  transition: -webkit-transform 1s ease-out;
+  transition: transform 1s ease-out;
+  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+}
+
+header .Name-in {
+  opacity: 1;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+header .start {
+  margin-left: 50px;
+  margin-top: 25px;
   font-family: "Arial" !important;
-  margin-bottom: 60px;
-  letter-spacing: 50px;
-  font-size: 100px;
+  letter-spacing: 10px;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  font-size: 60px;
   color: #ffffff;
   -webkit-transition: text-shadow 1.5s ease-in;
   transition: text-shadow 1.5s ease-in;
@@ -81,10 +175,25 @@ header .core {
 }
 
 header .further-out {
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  margin-left: 50px;
   width: 120px;
   height: 120px;
   -webkit-box-shadow: inset -4px -4px 3px #cacaca, inset 4px 4px 1px #ffffff, 15px 15px 25px #e6e7e8, -15px -15px 25px #ffffff;
           box-shadow: inset -4px -4px 3px #cacaca, inset 4px 4px 1px #ffffff, 15px 15px 25px #e6e7e8, -15px -15px 25px #ffffff;
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
+  -webkit-transition: -webkit-transform 1s ease-out;
+  transition: -webkit-transform 1s ease-out;
+  transition: transform 1s ease-out;
+  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+}
+
+header .move {
+  -webkit-transform: translateY(-38%);
+          transform: translateY(-38%);
 }
 
 header .outer {
@@ -226,9 +335,21 @@ header .expand {
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
+  nav {
+    display: none;
+  }
+  header .Name {
+    width: 350px;
+  }
+  header .Name-in {
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+  }
   header h1 {
-    font-size: 55px;
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+    font-size: 45px;
     letter-spacing: 25px;
   }
   header .further-out {

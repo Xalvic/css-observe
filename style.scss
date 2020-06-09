@@ -28,16 +28,79 @@ svg {
   width: 0;
   height: 0;
 }
+nav {
+  min-height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 100px;
+  opacity: 0;
+  transform: translateY(-90%);
+  transition: transform 1s ease-out;
+  .Logo {
+    width: 90px;
+    margin-top: 10px;
+  }
+  ul {
+    list-style: none;
+    li {
+      display: inline-block;
+      padding: 0px 30px;
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      a:hover {
+        color: rgba(82, 82, 82, 0.63);
+      }
+    }
+  }
+}
+.nav-in {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+video {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1920px;
+  z-index: -1;
+}
+
 header {
+  min-height: 90vh;
   user-select: none;
   @include flex();
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-around;
   flex-direction: column;
   height: 100vh;
-  h1 {
+  .Name {
+    margin-left: 50px;
+    align-self: flex-start;
+    width: 350px;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 1s ease-out;
+  }
+  .Name-in {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  .start {
+    margin-left: 50px;
+    margin-top: 25px;
     font-family: "Arial" !important;
-    margin-bottom: 60px;
-    letter-spacing: 50px;
-    font-size: 100px;
+    letter-spacing: 10px;
+    align-self: start;
+    font-size: 60px;
     color: #ffffff;
     transition: text-shadow 1.5s ease-in;
     text-shadow: 0px 0px 2px #ffffff, 0px 0px 2px #ffffff;
@@ -51,13 +114,18 @@ header {
   }
   .further-out {
     // position: relative;
+    align-self: start;
+    margin-left: 50px;
     width: 120px;
     height: 120px;
-    // background-color: #eeeeee;
     box-shadow: inset -4px -4px 3px #cacaca, inset 4px 4px 1px #ffffff,
       15px 15px 25px #e6e7e8, -15px -15px 25px #ffffff;
+    transform: translateY(-150%);
+    transition: transform 1s ease-out;
   }
-
+  .move {
+    transform: translateY(-38%);
+  }
   .outer {
     box-shadow: -4px -4px 9px #cacaca, 4px 4px 20px #ffffff;
     width: 90%;
@@ -141,10 +209,20 @@ header {
     border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
+  nav {
+    display: none;
+  }
   header {
+    .Name {
+      width: 350px;
+    }
+    .Name-in {
+      transform: translateX(10%);
+    }
     h1 {
-      font-size: 55px;
+      transform: translateX(10%);
+      font-size: 45px;
       letter-spacing: 25px;
     }
     .further-out {
@@ -161,3 +239,10 @@ header {
     }
   }
 }
+// @media only screen and (min-width: 1400px) {
+//   header {
+//     .further-out {
+//       margin-left: 0 !important;
+//     }
+//   }
+// }
