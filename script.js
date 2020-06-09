@@ -5,9 +5,9 @@ let main = document.querySelector(".further-out");
 main.addEventListener("click", () => {
   wave.classList.add("expand");
 
-  // setTimeout(() => {
-  //   wave.classList.remove("expand");
-  // }, 2000);
+  setTimeout(() => {
+    wave.classList.remove("expand");
+  }, 2000);
 });
 
 const start = () => {
